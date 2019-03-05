@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">饭团小说（修改版）</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="feedback">求书、反馈</string>
+    <string name="use_teaching">正确使用姿势</string>
+    <string name="check_app">版本检查</string>
+    <string name="about">关于</string>
+    <string name="search_hide">输入小说名或作者</string>
+    <string name="update_text">安装包下载中</string>
+
+    <string name="cache_title">缓存多少章？</string>
+    <string name="beforn_50">后面50章</string>
+    <string name="beforn_all">后面全部</string>
+    <string name="cache_all">全部</string>
+    <string name="change_source">更换转码小说源</string>
+    <string name="auther">作者：</string>
+    <string name="type">类型：</string>
+    <string name="source">来源：</string>
+    <string name="jianjie">简介</string>
+    <string name="reading">阅读</string>
+    <string name="add_book_case">加入书架</string>
+    <string name="no_book">暂未收录</string>
+    <string name="book_case">书架</string>
+    <string name="category">分类</string>
+    <string name="no_book_book_case">泥煤的还没添加小说</string>
+
+    <string name="teach_01_title">1、删除书架中的书本</string>
+    <string name="teach_01_msg">在书本条目向左滑，出现功能按钮。</string>
+    <string name="teach_02_title">2、书架中的书本排序</string>
+    <string name="teach_02_msg">按住右边方块即可拖动排序。</string>
+    <string name="feedback_msg">求书、吐槽、不满，畅所欲言。</string>
+    <string name="feedback_email">留下邮箱我们能及时回答您的问题</string>
+</resources>

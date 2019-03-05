@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fefefe"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/baseColor"
+        android:elevation="15dp">
+
+        <ImageView
+            android:id="@+id/ivReturn"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:background="@drawable/btn_bg"
+            android:clickable="true"
+            android:onClick="onReturn"
+            android:padding="15dp"
+            android:src="@drawable/ic_return" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/ivReturn"
+            android:background="@color/baseFocuColor" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/feedback"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+    <EditText
+        android:id="@+id/etFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="20dp"
+        android:background="#ffffff"
+        android:elevation="10dp"
+        android:gravity="start"
+        android:hint="@string/feedback_msg"
+        android:padding="10dp"
+        android:textColor="#000000" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="#ffffff"
+        android:elevation="10dp"
+        android:gravity="start"
+        android:hint="@string/feedback_email"
+        android:padding="10dp"
+        android:textColor="#000000" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/btn_bg"
+        android:elevation="15dp"
+        android:gravity="center"
+        android:onClick="onSubmit"
+        android:text="提交"
+        android:textColor="#fff" />
+
+</LinearLayout>

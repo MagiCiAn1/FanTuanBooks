@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">飯糰小說</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+
+    <string name="feedback">求書、反饋</string>
+    <string name="use_teaching">正確使用姿勢</string>
+    <string name="check_app">版本檢查</string>
+    <string name="about">關於</string>
+    <string name="search_hide">輸入小說名或作者</string>
+    <string name="update_text">軟體下載中</string>
+
+    <string name="cache_title">緩存多少章？</string>
+    <string name="beforn_50">後面50章</string>
+    <string name="beforn_all">後面全部</string>
+    <string name="cache_all">全部</string>
+    <string name="change_source">更換轉碼小說源</string>
+
+    <string name="auther">作者：</string>
+    <string name="type">類型：</string>
+    <string name="source">來源：</string>
+    <string name="jianjie">簡介</string>
+    <string name="reading">阅读</string>
+    <string name="add_book_case">加入書架</string>
+    <string name="no_book">暫未收錄</string>
+    <string name="book_case">書架</string>
+    <string name="category">分類</string>
+    <string name="no_book_book_case">泥煤的還沒有添加小說</string>
+
+
+    <string name="teach_01_title">1、刪除書架中的書本</string>
+    <string name="teach_01_msg">在書本條目向左滑，出現功能按鈕。</string>
+    <string name="teach_02_title">2、書架中的書本排序</string>
+    <string name="teach_02_msg">按住右邊方塊即可拖動排序。</string>
+    <string name="feedback_msg">求書、吐槽、不滿，暢所欲言。</string>
+    <string name="feedback_email">留下emali我們能及時回答您的問題</string>
+</resources>

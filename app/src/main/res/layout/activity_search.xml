@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/baseColor"
+        android:elevation="15dp">
+
+        <ImageView
+            android:id="@+id/ivReturn"
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:background="@drawable/btn_bg"
+            android:clickable="true"
+            android:padding="15dp"
+            android:src="@drawable/ic_return" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/ivReturn"
+            android:background="@color/baseFocuColor" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/ivSearch"
+            android:background="@color/baseFocuColor" />
+
+        <ImageView
+            android:id="@+id/ivSearch"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/btn_bg"
+            android:clickable="true"
+            android:padding="15dp"
+            android:src="@drawable/ic_search" />
+
+        <ImageView
+            android:id="@+id/ivClear"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_toLeftOf="@+id/ivSearch"
+            android:padding="17dp"
+            android:src="@drawable/ic_clear_editview"
+            android:visibility="invisible" />
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/ivClear"
+            android:layout_toRightOf="@+id/ivReturn"
+            android:background="@null"
+            android:hint="@string/search_hide"
+            android:imeOptions="actionSearch"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:textColor="#ffffffff"
+            android:textColorHint="#ffffffff"
+            android:textCursorDrawable="@null"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/searchBookList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/searchBar"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

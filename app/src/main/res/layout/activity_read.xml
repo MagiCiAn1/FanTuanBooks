@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.anonymouser.book.widget.PagerView
+        android:id="@+id/PagerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true" />
+
+    <!-- 亮度控制 -->
+    <View
+        android:id="@+id/lightControlView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#00000000"
+        android:clickable="false" />
+
+    <!-- 顶部控制栏 -->
+    <RelativeLayout
+        android:id="@+id/topView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#1E1E1E"
+        android:clickable="true"
+        android:elevation="20dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/replaceSource"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ivLeftArrow"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:onClick="onReturn"
+                android:paddingBottom="15dp"
+                android:paddingLeft="15dp"
+                android:paddingTop="15dp"
+                android:src="@drawable/ic_left_arrow" />
+
+            <TextView
+                android:id="@+id/topBookName"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:onClick="onReturn"
+                android:text=""
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/replaceSource"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="onReplaceSource"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="换源"
+            android:textColor="#ffffff"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+    <!-- 中间蒙版，点击隐藏功能控件 -->
+    <View
+        android:id="@+id/centerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomView"
+        android:layout_below="@+id/topView"
+        android:onClick="onCenterView"
+        android:visibility="gone" />
+
+    <!-- 字体设置 -->
+    <LinearLayout
+        android:id="@+id/fontSetting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottomView"
+        android:background="#1E1E1E"
+        android:clickable="true"
+        android:elevation="20dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_sun_empty" />
+
+            <com.xw.repo.BubbleSeekBar
+                android:id="@+id/lightControl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                app:bsb_bubble_color="#353535"
+                app:bsb_bubble_text_color="#A0A0A0"
+                app:bsb_max="230"
+                app:bsb_min="0"
+                app:bsb_progress="0"
+                app:bsb_second_track_color="#353535"
+                app:bsb_section_count="0"
+                app:bsb_thumb_color="#A0A0A0"
+                app:bsb_touch_to_seek="true"
+                app:bsb_track_color="#656565" />
+
+            <!--<SeekBar-->
+            <!--android:id="@+id/lightControl"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_weight="1"-->
+            <!--android:max="230"-->
+            <!--android:maxHeight="3dp"-->
+            <!--android:minHeight="3dp"-->
+            <!--android:progressDrawable="@drawable/seekbar_font_setting_bg"-->
+            <!--android:secondaryProgress="0"-->
+            <!--android:thumb="@drawable/seekbar_font_setting_thumb"-->
+            <!--android:thumbOffset="0dip" />-->
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_sun_empty" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/font_setting_bg_btn"
+                android:onClick="onTextReduceSize"
+                android:paddingBottom="5dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="5dp"
+                android:src="@drawable/font_reduce_btn" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/font_setting_bg_btn"
+                android:onClick="onTextAddSize"
+                android:paddingBottom="5dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="5dp"
+                android:src="@drawable/font_add_btn" />
+
+            <TextView
+                android:id="@+id/traditional"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/bg_btn"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="onTraditional"
+                android:text="繁"
+                android:textColor="#e0e0e0" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/hangSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/bg_btn"
+                android:onClick="onLinkSmall"
+                android:paddingBottom="2dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="2dp"
+                android:src="@drawable/ic_hang_small" />
+
+            <ImageView
+                android:id="@+id/hangDefult"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/bg_btn"
+                android:onClick="onLinkDefult"
+                android:paddingBottom="2dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="2dp"
+                android:src="@drawable/ic_hang_defult" />
+
+            <ImageView
+                android:id="@+id/hangBig"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/bg_btn"
+                android:onClick="onLinkBig"
+                android:paddingBottom="2dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="2dp"
+                android:src="@drawable/ic_hang_big" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/bgListView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" />
+    </LinearLayout>
+
+    <!-- 底部功能按钮 -->
+    <LinearLayout
+        android:id="@+id/bottomView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="#1E1E1E"
+        android:elevation="20dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onDirectory"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:padding="8dp"
+                android:src="@drawable/ic_directory" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="top|center_horizontal"
+                android:text="目录"
+                android:textColor="#aaaaaa"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onChangeDarkLight"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/moonSunIcon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:padding="5dp"
+                android:src="@drawable/ic_moon" />
+
+            <TextView
+                android:id="@+id/moonSunTxt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="top|center_horizontal"
+                android:text="夜间"
+                android:textColor="#aaaaaa"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onFontSetting"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:padding="5dp"
+                android:src="@drawable/ic_font" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="top|center_horizontal"
+                android:text="设置"
+                android:textColor="#aaaaaa"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onCache"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:padding="5dp"
+                android:src="@drawable/ic_cache" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="top|center_horizontal"
+                android:text="缓存"
+                android:textColor="#aaaaaa"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 目录 -->
+    <LinearLayout
+        android:id="@+id/directory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="80dp"
+        android:background="#f0f0f0"
+        android:clickable="true"
+        android:elevation="30dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/bookName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_margin="10dp"
+                android:layout_toLeftOf="@+id/ivQuitDirectory"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/ivQuitDirectory"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:onClick="quitDirectory"
+                android:padding="10dp"
+                android:src="@drawable/ic_directory_quit" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="目录"
+                android:textColor="#000000" />
+
+            <ImageView
+                android:id="@+id/clickUpsideDown"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:padding="10dp"
+                android:src="@drawable/ic_upside_down" />
+        </RelativeLayout>
+
+        <com.simplecityapps.recyclerview_fastscroll.views.FastScrollRecyclerView
+            android:id="@+id/directoryView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            app:fastScrollAutoHide="true"
+            app:fastScrollAutoHideDelay="1500"
+            app:fastScrollPopupBackgroundSize="40dp"
+            app:fastScrollPopupBgColor="#565656"
+            app:fastScrollPopupPosition="adjacent"
+            app:fastScrollPopupTextColor="@android:color/primary_text_dark"
+            app:fastScrollPopupTextSize="20sp"
+            app:fastScrollThumbColor="#565656" />
+
+    </LinearLayout>
+
+    <!-- 加载的蒙版 -->
+    <RelativeLayout
+        android:id="@+id/loadingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#BB000000"
+        android:clickable="true"
+        android:visibility="gone">
+
+        <com.victor.loading.rotate.RotateLoading
+            android:id="@+id/rotateLoading"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            app:loading_color="#ffffff"
+            app:loading_width="5dp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

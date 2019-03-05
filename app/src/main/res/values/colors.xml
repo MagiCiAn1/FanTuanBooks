@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#B63327</color>
+    <color name="colorPrimaryDark">#80241B</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--<color name="baseColor">#A40E15</color>-->
+    <color name="baseColor">#B63327</color>
+    <color name="baseFocuColor">#80241B</color>
+
+    <color name="book_loading_background">#00000000</color>
+    <color name="book_loading_book">#ff33b5e5</color>
+    <color name="book_loading_page">#00000000</color>
+
+
+    <color name="reader_background_gray_color">#ff40332a</color>
+    <color name="reader_background_defult_color">#ffe7dcbe</color>
+    <color name="reader_background_show10_color">#ffd0d4d9</color>
+    <color name="reader_background_show8_color">#ffd2ccdb</color>
+    <color name="reader_background_show9_color">#ffebcec2</color>
+    <color name="reader_background_white_color">#ffeae5e0</color>
+    <color name="reader_background_white_green">#ffbed0bf</color>
+    <color name="reader_background_yellow_color">#ff031923</color>
+
+    <color name="white">#f0f0f0</color>
+    <color name="black">#000000</color>
+</resources>
