@@ -16,5 +16,9 @@ APP具体信息请参考loveliu大神的[repository](https://github.com/loveliu/
 
 [下载应用]()
 
+#### 致谢
 
+------
+
+[loveliu](https://github.com/loveliu)
 
