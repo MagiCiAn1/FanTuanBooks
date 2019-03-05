@@ -14,7 +14,7 @@
 
 APP具体信息请参考loveliu大神的[repository](https://github.com/loveliu/FanTuan)。
 
-[下载应用]()
+[下载应用](https://github.com/MagiCiAn1/FanTuanBooks/blob/master/release/app-release.apk)
 
 #### 致谢
 
